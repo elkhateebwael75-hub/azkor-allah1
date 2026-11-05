@@ -10,11 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <style>
-/* ============================================================
-   1) المتغيرات — ألوان أفتح وخطوط أكبر
-   ============================================================ */
 :root{
-  /* أخضر أفتح وأكثر حيوية */
   --green-900:#14503c;
   --green-800:#1a6b4f;
   --green-700:#238a63;
@@ -22,26 +18,21 @@
   --green-500:#3fbd8c;
   --green-100:#e3f4ec;
   --green-50:#f0faf5;
-
   --gold-600:#b8860b;
   --gold-500:#c9a227;
   --gold-400:#e0b84a;
   --gold-300:#f0d27a;
-
   --cream:#fdfcf7;
   --cream-2:#f5f2e8;
   --cream-3:#efeadd;
-
   --ink-900:#1f2a24;
   --ink-700:#3d4a43;
   --ink-500:#6d7a72;
   --line:#e6e0d0;
-
   --white:#ffffff;
   --shadow-sm:0 2px 10px rgba(26,107,79,.08);
   --shadow-md:0 8px 28px rgba(26,107,79,.12);
   --shadow-lg:0 20px 50px rgba(26,107,79,.16);
-
   --radius:20px;
   --radius-sm:14px;
   --font-body:'Cairo',system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -57,7 +48,7 @@ body{
   background:var(--cream);
   color:var(--ink-900);
   line-height:1.85;
-  font-size:19px;                /* أكبر من قبل */
+  font-size:19px;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
@@ -71,7 +62,6 @@ ul{list-style:none}
 .section--dark{background:var(--green-800);color:#eefaf4}
 .section--dark h2,.section--dark h3,.section--dark p{color:#eefaf4}
 
-/* عناوين */
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;
   font-size:16px;font-weight:800;letter-spacing:.3px;
@@ -82,7 +72,7 @@ ul{list-style:none}
 .section-head{max-width:880px;margin:0 auto 60px;text-align:center}
 .section-head h2{
   font-family:var(--font-display);
-  font-size:clamp(32px,4.6vw,50px);   /* أكبر */
+  font-size:clamp(32px,4.6vw,50px);
   font-weight:900;line-height:1.35;color:var(--green-800);
   letter-spacing:-.5px;
 }
@@ -92,7 +82,6 @@ ul{list-style:none}
 .section-head .accent{color:var(--gold-600)}
 .section--dark .section-head .accent{color:var(--gold-300)}
 
-/* أزرار */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
   padding:18px 36px;border-radius:999px;font-weight:900;font-size:19px;
@@ -111,9 +100,6 @@ ul{list-style:none}
 .btn--block{width:100%}
 .btn:active{transform:translateY(0)}
 
-/* ============================================================
-   2) الشريط العلوي + الهيدر
-   ============================================================ */
 .topbar{
   background:var(--green-700);color:#eafaf3;font-size:16px;
   padding:10px 0;text-align:center;letter-spacing:.2px;
@@ -153,7 +139,6 @@ ul{list-style:none}
 .burger{display:none;font-size:26px;color:var(--green-800);padding:10px;border-radius:10px}
 .burger:hover{background:var(--cream-2)}
 
-/* قائمة الموبايل */
 .mobile-menu{
   position:fixed;inset:0;z-index:80;background:var(--green-800);color:#fff;
   transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
@@ -168,9 +153,6 @@ ul{list-style:none}
 .mobile-menu .btn{margin-top:24px}
 .close-menu{font-size:30px;color:#fff;padding:6px}
 
-/* ============================================================
-   3) الواجهة الرئيسية (Hero) — أفتح، وصورتك في الأعلى
-   ============================================================ */
 .hero{
   position:relative;
   background:
@@ -188,25 +170,36 @@ ul{list-style:none}
     radial-gradient(circle at 70% 60%, rgba(45,163,119,.10) 0 2px, transparent 3px);
   background-size:120px 120px,140px 140px;
 }
-.hero-inner{
-  display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center;
-}
-/* كارت صاحب المشروع — في الأول */
+.hero-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
+
 .owner-card{
   background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
-  padding:38px 32px;box-shadow:var(--shadow-lg);text-align:center;position:relative;
+  padding:34px 28px;box-shadow:var(--shadow-lg);text-align:center;position:relative;
 }
 .owner-card::after{
   content:"";position:absolute;inset:auto 20px -3px 20px;height:6px;border-radius:6px;
   background:linear-gradient(90deg,var(--gold-400),var(--gold-600),var(--gold-400));
 }
 .owner-avatar{
-  width:170px;height:170px;border-radius:50%;overflow:hidden;margin:0 auto 20px;
-  border:5px solid var(--gold-400);box-shadow:0 14px 34px rgba(184,134,11,.28);
-  background:var(--cream-2);display:grid;place-items:center;
+  width:100%;
+  max-width:340px;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow:hidden;
+  margin: 0 auto 22px;
+  border:5px solid var(--gold-400);
+  box-shadow:0 14px 34px rgba(184,134,11,.28);
+  background: var(--cream-2);
+  display:grid;place-items:center;
 }
-.owner-avatar img{width:100%;height:100%;object-fit:cover}
+.owner-avatar img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  object-position: center;
+}
 .owner-avatar .fallback{font-size:60px;color:var(--gold-500)}
+
 .owner-card h3{font-size:26px;font-weight:900;color:var(--green-800);margin-bottom:4px}
 .owner-card .role{font-size:16px;color:var(--gold-600);font-weight:800;margin-bottom:14px}
 .owner-card p{font-size:17px;color:var(--ink-700);line-height:1.8}
@@ -217,7 +210,6 @@ ul{list-style:none}
 }
 .owner-card .wa-line i{color:#25d366;font-size:22px}
 
-/* نص الهيرو */
 .hero-copy h1{
   font-family:var(--font-display);
   font-size:clamp(52px,8vw,104px);
@@ -239,7 +231,6 @@ ul{list-style:none}
 }
 .hero-actions{display:flex;flex-wrap:wrap;gap:16px}
 
-/* شريط الثقة — أفتح */
 .trust-strip{background:var(--green-50);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .trust-inner{display:grid;grid-template-columns:repeat(4,1fr)}
 .trust-item{padding:26px 18px;text-align:center;border-left:1px solid var(--line);color:var(--ink-700)}
@@ -248,9 +239,6 @@ ul{list-style:none}
 .trust-item strong{display:block;font-size:18px;font-weight:900;color:var(--green-800)}
 .trust-item span{font-size:15px;color:var(--ink-500);font-weight:600}
 
-/* ============================================================
-   4) قسم: ما هو المشروع
-   ============================================================ */
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
 .about-copy h2{
   font-family:var(--font-display);font-size:clamp(30px,4vw,44px);
@@ -287,9 +275,6 @@ ul{list-style:none}
 .about-badge strong{display:block;font-size:17px;font-weight:900}
 .about-badge span{font-size:14px;color:#d5f0e4}
 
-/* ============================================================
-   5) المراحل
-   ============================================================ */
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .phase{
   background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
@@ -316,9 +301,6 @@ ul{list-style:none}
   padding:20px 26px;border-radius:var(--radius-sm);line-height:1.8;
 }
 
-/* ============================================================
-   6) الهيكل التنظيمي
-   ============================================================ */
 .org{display:flex;flex-direction:column;align-items:center}
 .org-root{
   background:linear-gradient(135deg,var(--green-800),var(--green-600));
@@ -371,9 +353,6 @@ ul{list-style:none}
 .region-detail i{color:var(--gold-600);font-size:18px}
 .org-note{max-width:860px;margin:24px auto 0;text-align:center;font-size:16px;color:var(--ink-500);line-height:1.8}
 
-/* ============================================================
-   7) كيف يعمل
-   ============================================================ */
 .ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .op-card{
   background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
@@ -399,9 +378,6 @@ ul{list-style:none}
 }
 .ops-motto .accent{color:var(--gold-600)}
 
-/* ============================================================
-   8) تجربة العميل + المعرض
-   ============================================================ */
 .exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:48px}
 .exp-item{
   background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);
@@ -434,7 +410,6 @@ ul{list-style:none}
 }
 .exp-claim .accent{color:var(--gold-600)}
 
-/* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:120;background:rgba(10,50,38,.95);display:none;align-items:center;justify-content:center;padding:24px}
 .lightbox.open{display:flex}
 .lightbox img{max-width:92vw;max-height:86vh;border-radius:var(--radius-sm);box-shadow:var(--shadow-lg)}
@@ -445,9 +420,6 @@ ul{list-style:none}
 }
 .lightbox .lb-close:hover{background:rgba(255,255,255,.3)}
 
-/* ============================================================
-   9) لماذا المشاركة
-   ============================================================ */
 .why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 .why-copy h2{font-family:var(--font-display);font-size:clamp(30px,4vw,44px);font-weight:900;color:#fff;line-height:1.4;margin-bottom:20px;letter-spacing:-.5px}
 .why-copy h2 .accent{color:var(--gold-300)}
@@ -470,9 +442,6 @@ ul{list-style:none}
 .why-item strong{display:block;font-size:19px;font-weight:900;color:#fff;margin-bottom:4px}
 .why-item span{font-size:16px;color:#d5f0e4;line-height:1.7}
 
-/* ============================================================
-   10) المشاركة المقترحة
-   ============================================================ */
 .share-card{
   max-width:960px;margin:0 auto;background:var(--white);border:1px solid var(--line);
   border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden;
@@ -506,9 +475,6 @@ ul{list-style:none}
 .share-disclaimer i{color:var(--gold-600);font-size:22px;margin-top:2px;flex-shrink:0}
 .share-disclaimer strong{color:var(--green-800);display:block;margin-bottom:6px;font-size:18px}
 
-/* ============================================================
-   11) نموذج التسجيل
-   ============================================================ */
 .reg-wrap{max-width:960px;margin:0 auto}
 .reg-card{
   background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
@@ -543,16 +509,32 @@ ul{list-style:none}
 .field .hint{font-size:14px;color:var(--ink-500);font-weight:600}
 .field .err-msg{font-size:14px;color:#c0392b;font-weight:800;display:none}
 .field .err-msg.show{display:block}
-.stock-picker{display:flex;flex-wrap:wrap;gap:12px}
-.stock-opt{
-  flex:1;min-width:80px;padding:16px 10px;border-radius:var(--radius-sm);
-  border:2px solid var(--line);background:var(--cream);text-align:center;
-  transition:all .2s;cursor:pointer;font-weight:900;color:var(--green-800);
+
+/* حقل عدد الأسهم */
+#stocksInput{
+  font-size:22px;
+  font-weight:900;
+  text-align:center;
+  letter-spacing:2px;
+  color:var(--green-800);
+  background:var(--white);
+  border:2px solid var(--line);
+  padding:18px;
 }
-.stock-opt:hover{border-color:var(--gold-400);background:rgba(201,162,39,.1)}
-.stock-opt.active{background:var(--green-700);color:#fff;border-color:var(--green-700);box-shadow:0 8px 20px rgba(35,138,99,.3)}
-.stock-opt .num{font-size:24px;display:block;line-height:1.1}
-.stock-opt .lbl{font-size:13px;font-weight:700;opacity:.9}
+#stocksInput:focus{
+  border-color:var(--green-600);
+  box-shadow:0 0 0 5px rgba(45,163,119,.15);
+}
+#stocksInput::-webkit-outer-spin-button,
+#stocksInput::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+#stocksInput[type=number]{
+  -moz-appearance:textfield;
+  appearance:textfield;
+}
+
 .total-box{
   grid-column:1/-1;background:linear-gradient(135deg,rgba(45,163,119,.1),rgba(201,162,39,.12));
   border:2px solid rgba(201,162,39,.4);border-radius:var(--radius-sm);
@@ -575,7 +557,6 @@ ul{list-style:none}
 .form-note{font-size:15px;color:var(--ink-500);text-align:center;line-height:1.8;font-weight:600}
 .form-note i{color:var(--gold-600)}
 
-/* رسالة النجاح */
 .success-box{display:none;text-align:center;padding:20px 8px 8px}
 .success-box.show{display:block;animation:fadeUp .5s ease}
 .success-icon{
@@ -601,9 +582,6 @@ ul{list-style:none}
 .copy-feedback{font-size:15px;font-weight:800;color:var(--green-700);margin-top:10px;display:none}
 .copy-feedback.show{display:block}
 
-/* ============================================================
-   12) الشفافية
-   ============================================================ */
 .legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
 .legal-copy h2{font-family:var(--font-display);font-size:clamp(30px,4vw,44px);font-weight:900;color:var(--green-800);line-height:1.4;margin-bottom:20px;letter-spacing:-.5px}
 .legal-copy h2 .accent{color:var(--gold-600)}
@@ -624,9 +602,6 @@ ul{list-style:none}
 }
 .legal-warn i{margin-top:3px;flex-shrink:0;color:var(--gold-300)}
 
-/* ============================================================
-   13) الأسئلة الشائعة
-   ============================================================ */
 .faq{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
 .faq-item{
   background:var(--white);border:1.5px solid var(--line);border-radius:var(--radius-sm);
@@ -645,11 +620,8 @@ ul{list-style:none}
   max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;
   padding:0 28px;font-size:18px;color:var(--ink-700);line-height:1.9;font-weight:600;
 }
-.faq-item.open .faq-a{max-height:400px;padding:0 28px 26px}
+.faq-item.open .faq-a{max-height:500px;padding:0 28px 26px}
 
-/* ============================================================
-   14) التواصل — بعد نقل صاحب المشروع للأعلى، بقى بسيط
-   ============================================================ */
 .contact-wrap{
   max-width:820px;margin:0 auto;background:var(--white);border:1px solid var(--line);
   border-radius:var(--radius);box-shadow:var(--shadow-md);padding:44px;text-align:center;
@@ -663,9 +635,6 @@ ul{list-style:none}
 }
 .contact-wrap .wa-line i{color:#25d366;font-size:26px}
 
-/* ============================================================
-   15) الأذكار
-   ============================================================ */
 .dhikr-band{
   background:linear-gradient(135deg,var(--green-700),var(--green-600));
   color:#fff;padding:52px 0;text-align:center;position:relative;overflow:hidden;
@@ -684,9 +653,6 @@ ul{list-style:none}
 .dhikr-dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s}
 .dhikr-dots span.active{background:var(--gold-300)}
 
-/* ============================================================
-   16) الفوتر — أفتح
-   ============================================================ */
 .footer{background:var(--green-100);color:var(--ink-700);padding:72px 0 0;border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:44px;padding-bottom:48px}
 .footer h4{color:var(--green-800);font-size:18px;font-weight:900;margin-bottom:20px}
@@ -714,7 +680,6 @@ ul{list-style:none}
 }
 .footer-bottom .heart{color:#e74c3c}
 
-/* زر واتساب عائم */
 .wa-float{
   position:fixed;bottom:24px;left:24px;z-index:70;
   width:64px;height:64px;border-radius:50%;background:#25d366;color:#fff;
@@ -729,7 +694,6 @@ ul{list-style:none}
 @keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
 @media (prefers-reduced-motion:reduce){.wa-float::after{animation:none}}
 
-/* حركات الظهور */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
@@ -738,9 +702,6 @@ ul{list-style:none}
   *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
 
-/* ============================================================
-   17) التجاوب
-   ============================================================ */
 @media (max-width:1080px){
   .hero-inner{grid-template-columns:1fr;gap:44px;text-align:center}
   .hero-copy .lead{margin-inline:auto}
@@ -768,8 +729,8 @@ ul{list-style:none}
   .section{padding:72px 0}
   .hero{padding:40px 0 60px}
   .hero-copy h1{font-size:clamp(48px,13vw,72px)}
-  .owner-avatar{width:150px;height:150px}
-  .owner-card{padding:30px 24px}
+  .owner-avatar{max-width:300px;aspect-ratio:4/5}
+  .owner-card{padding:26px 20px}
   .form-grid{grid-template-columns:1fr}
   .pillars{grid-template-columns:1fr}
   .reg-head{padding:26px}
@@ -791,8 +752,6 @@ ul{list-style:none}
   .exp-grid{grid-template-columns:1fr 1fr;gap:12px}
   .exp-item{padding:18px 12px}
   .exp-item strong{font-size:15px}
-  .stock-opt{min-width:60px;padding:14px 6px}
-  .stock-opt .num{font-size:20px}
   .share-examples{grid-template-columns:1fr 1fr}
   .hero-actions{flex-direction:column}
   .hero-actions .btn{width:100%}
@@ -800,13 +759,12 @@ ul{list-style:none}
   .trust-item{padding:18px 12px}
   .trust-item strong{font-size:15px}
   .trust-item span{font-size:13px}
-  .owner-avatar{width:130px;height:130px}
+  .owner-avatar{max-width:260px}
 }
 </style>
 </head>
 <body>
 
-<!-- ===================== الشريط العلوي ===================== -->
 <div class="topbar">
   <div class="marquee">
     <div class="marquee-track">
@@ -815,7 +773,6 @@ ul{list-style:none}
   </div>
 </div>
 
-<!-- ===================== الهيدر ===================== -->
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="هايبر اذكر الله">
@@ -840,7 +797,6 @@ ul{list-style:none}
   </div>
 </header>
 
-<!-- قائمة الموبايل -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <div class="mobile-menu-head">
     <div class="brand">
@@ -861,12 +817,10 @@ ul{list-style:none}
   <a href="#register" class="btn btn--gold btn--block"><i class="fa-solid fa-user-plus"></i> سجّل رغبتك في المشاركة</a>
 </div>
 
-<!-- ===================== الواجهة الرئيسية — صورتك أولاً ===================== -->
 <section class="hero" id="top">
   <div class="container">
     <div class="hero-inner">
 
-      <!-- كارت صاحب المشروع — أول حاجة تظهر -->
       <div class="owner-card reveal">
         <div class="owner-avatar">
           <img src="https://i.postimg.cc/VNrzBYk1/wael.jpg" alt="وائل الخطيب — صاحب فكرة المشروع" loading="eager"
@@ -878,7 +832,6 @@ ul{list-style:none}
         <div class="wa-line"><i class="fa-brands fa-whatsapp"></i> <span>01224324243</span></div>
       </div>
 
-      <!-- نص الهيرو -->
       <div class="hero-copy reveal">
         <h1>حلم <span class="gold">العمر</span></h1>
         <div class="project-name">هايبر اذكر الله</div>
@@ -895,7 +848,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- شريط الثقة -->
 <div class="trust-strip">
   <div class="container trust-inner">
     <div class="trust-item"><i class="fa-solid fa-store"></i><strong>هايبر ماركت رئيسي</strong><span>نقطة الانطلاق</span></div>
@@ -905,7 +857,6 @@ ul{list-style:none}
   </div>
 </div>
 
-<!-- ===================== ما هو المشروع ===================== -->
 <section class="section" id="about">
   <div class="container">
     <div class="about-grid">
@@ -938,7 +889,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== خطة التوسع ===================== -->
 <section class="section section--tint" id="phases">
   <div class="container">
     <div class="section-head reveal">
@@ -988,7 +938,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== الهيكل التنظيمي ===================== -->
 <section class="section" id="structure">
   <div class="container">
     <div class="section-head reveal">
@@ -1003,7 +952,7 @@ ul{list-style:none}
       </div>
       <div class="org-connector"></div>
       <div class="org-branches">
-        <div class="org-branch"><i class="fa-solid fa-store"></i><strong>الهايبر الماركت الرئيسي</strong><span>نقطة الانطلاق</span></div>
+        <div class="org-branch"><i class="fa-solid fa-store"></i><strong>الهايبر ماركت الرئيسي</strong><span>نقطة الانطلاق</span></div>
         <div class="org-branch"><i class="fa-solid fa-warehouse"></i><strong>المخزن المركزي</strong><span>إمداد موحد</span></div>
         <div class="org-branch"><i class="fa-solid fa-shop"></i><strong>شبكة الفروع المحلية</strong><span>داخل الإسكندرية</span></div>
       </div>
@@ -1037,7 +986,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== كيف يعمل ===================== -->
 <section class="section section--tint" id="ops">
   <div class="container">
     <div class="section-head reveal">
@@ -1087,7 +1035,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== تجربة العميل + المعرض ===================== -->
 <section class="section" id="experience">
   <div class="container">
     <div class="section-head reveal">
@@ -1141,13 +1088,11 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lb-close" id="lbClose" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
   <img src="" alt="عرض الصورة" id="lbImg">
 </div>
 
-<!-- ===================== لماذا المشاركة ===================== -->
 <section class="section section--dark" id="why">
   <div class="container">
     <div class="why-wrap">
@@ -1175,7 +1120,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== المشاركة المقترحة ===================== -->
 <section class="section" id="share">
   <div class="container">
     <div class="section-head reveal">
@@ -1202,7 +1146,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== التسجيل ===================== -->
 <section class="section section--tint" id="register">
   <div class="container">
     <div class="section-head reveal">
@@ -1239,9 +1182,10 @@ ul{list-style:none}
                 <span class="err-msg" id="errPhone2">الرقم غير صحيح. اتركه فارغاً أو أدخل رقماً مصرياً صحيحاً.</span>
               </div>
               <div class="field full">
-                <label>عدد الأسهم التي ترغب في المشاركة بها <span class="req">*</span></label>
-                <div class="stock-picker" id="stockPicker"></div>
-                <span class="err-msg" id="errStocks">اختر عدد الأسهم.</span>
+                <label for="stocksInput">عدد الأسهم التي ترغب في المشاركة بها <span class="req">*</span></label>
+                <input type="number" id="stocksInput" name="stocks" min="1" max="10" step="1" value="1" inputmode="numeric" placeholder="اكتب عدد الأسهم من 1 إلى 10" required>
+                <span class="hint">اكتب عدد الأسهم بنفسك (من 1 إلى 10).</span>
+                <span class="err-msg" id="errStocks">اكتب عدداً صحيحاً من 1 إلى 10.</span>
               </div>
               <div class="total-box">
                 <div class="tl">إجمالي المساهمة المقترحة: <b id="totalLabel">20,000 جنيه</b></div>
@@ -1286,7 +1230,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== الشفافية ===================== -->
 <section class="section" id="legal">
   <div class="container">
     <div class="legal-grid">
@@ -1317,7 +1260,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== الأسئلة الشائعة ===================== -->
 <section class="section section--tint" id="faq">
   <div class="container">
     <div class="section-head reveal">
@@ -1335,7 +1277,7 @@ ul{list-style:none}
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">هل التسجيل يعني أنني أصبحت شريكاً؟ <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="faq-a">لا. التسجيل لا ينشئ ملكية أو أسهماً قانونية. ذلك لا يتم إلا بعد استكمال الإجراءات والعقود المعتمدة.</div>
+        <div class="faq-a">التسجيل دلوقتي خطوة أولى للتعبير عن رغبتك، وبيخليك في قائمة المهتمين اللي هيتواصل معاهم فريق المشروع. الهدف إننا نعرف حجم الإقبال، وبعدها نعرض على المهتمين كل التفاصيل والدراسات والعقود. الشريك الرسمي بيبقى بعد استكمال الإجراءات القانونية والعقود المعتمدة، وده اللي بيضمن حق كل واحد بشكل واضح.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">أين سيبدأ المشروع؟ <i class="fa-solid fa-chevron-down"></i></button>
@@ -1346,14 +1288,13 @@ ul{list-style:none}
         <div class="faq-a">بعد مراجعة طلبات التسجيل وتقييم حجم الإقبال، سيتم التواصل مع المهتمين لتحديد موعد الاجتماع الرسمي.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">هل الأرباح مضمونة؟ <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="faq-a">لا توجد أرباح مضمونة. نتائج أي مشروع تجاري ترتبط بالتنفيذ والتكاليف وظروف السوق، وسيتم عرض التفاصيل والدراسات المتاحة بشفافية.</div>
+        <button class="faq-q" aria-expanded="false">هل في أرباح متوقعة من المشروع؟ <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a">أي مشروع تجاري حقيقي بيتبني على دراسة سوق وحركة بيع. لما الهايبر يبقى فيه إقبال من الناس، وحركة شراء يومية، وأقسام شغالة، ده معناه إن في دخل ومبيعات، وبالتالي في أرباح متوقعة بناءً على الدراسات. إحنا مش بنوعد بربح مضمون بشكل مطلق — لأن أي تجارة في الدنيا فيها عوامل سوق — لكن بنقول إن المشروع مدروس، وفيه توقعات أرباح واضحة هتتعرض على المشاركين بالتفاصيل والأرقام قبل أي قرار مالي. الهدف إن كل واحد يبقى فاهم الصورة كاملة قبل ما يشارك، ويطمن إن المشروع مبني على أرقام ومنطق تجاري، مش مجرد كلام.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== التواصل ===================== -->
 <section class="section" id="contact">
   <div class="container">
     <div class="section-head reveal">
@@ -1371,7 +1312,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== شريط الأذكار ===================== -->
 <section class="dhikr-band" aria-label="أذكار">
   <div class="container">
     <div class="dhikr-label">ذكر الله طمأنينة القلب</div>
@@ -1380,7 +1320,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ===================== الفوتر ===================== -->
 <footer class="footer" id="footer">
   <div class="container">
     <div class="footer-grid">
@@ -1431,23 +1370,18 @@ ul{list-style:none}
 <a href="https://wa.me/201224324243" target="_blank" rel="noopener" class="wa-float" aria-label="تواصل عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
 
 <script>
-/* ============================================================
-   إعدادات
-   ============================================================ */
 const CONFIG = {
   sharePrice: 20000,
   whatsappNumber: '201224324243',
-  maxStocks: 20
+  maxStocks: 10
 };
 const fmt = n => n.toLocaleString('en-US');
 
-/* الهيدر */
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 10);
 }, {passive:true});
 
-/* قائمة الموبايل */
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeMenu = document.getElementById('closeMenu');
@@ -1458,7 +1392,6 @@ closeMenu.addEventListener('click', hideMenu);
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', hideMenu));
 document.addEventListener('keydown', e => { if(e.key === 'Escape') hideMenu(); });
 
-/* حركات الظهور */
 const revealEls = document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){
   const io = new IntersectionObserver((entries) => {
@@ -1469,7 +1402,6 @@ if('IntersectionObserver' in window){
   revealEls.forEach(el => el.classList.add('in'));
 }
 
-/* أمثلة المشاركة */
 const shareExamples = document.getElementById('shareExamples');
 (function buildExamples(){
   for(let i=1;i<=5;i++){
@@ -1480,39 +1412,55 @@ const shareExamples = document.getElementById('shareExamples');
   }
 })();
 
-/* اختيار الأسهم */
-const stockPicker = document.getElementById('stockPicker');
+const stocksInput = document.getElementById('stocksInput');
 const totalValue = document.getElementById('totalValue');
 const totalLabel = document.getElementById('totalLabel');
 const errStocks = document.getElementById('errStocks');
-let selectedStocks = 1;
 
-(function buildStockPicker(){
-  for(let i=1;i<=CONFIG.maxStocks;i++){
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'stock-opt' + (i===1?' active':'');
-    b.dataset.stocks = i;
-    b.innerHTML = `<span class="num">${i}</span><span class="lbl">سهم</span>`;
-    b.addEventListener('click', () => {
-      selectedStocks = i;
-      document.querySelectorAll('.stock-opt').forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-      updateTotal();
-      errStocks.classList.remove('show');
-    });
-    stockPicker.appendChild(b);
-  }
-})();
+let selectedStocks = 1;
 
 function updateTotal(){
   const total = selectedStocks * CONFIG.sharePrice;
   totalValue.textContent = fmt(total);
   totalLabel.textContent = fmt(total) + ' جنيه';
 }
+
+stocksInput.addEventListener('input', () => {
+  let v = parseInt(stocksInput.value, 10);
+  if(isNaN(v)) v = 0;
+  if(v > CONFIG.maxStocks) v = CONFIG.maxStocks;
+  if(v < 1) v = 0;
+
+  if(v > 0){
+    selectedStocks = v;
+    errStocks.classList.remove('show');
+    stocksInput.classList.remove('error');
+  } else {
+    selectedStocks = 0;
+  }
+  updateTotal();
+});
+
+stocksInput.addEventListener('blur', () => {
+  let v = parseInt(stocksInput.value, 10);
+  if(isNaN(v) || v < 1){
+    stocksInput.value = '';
+    selectedStocks = 0;
+    updateTotal();
+  } else if(v > CONFIG.maxStocks){
+    stocksInput.value = CONFIG.maxStocks;
+    selectedStocks = CONFIG.maxStocks;
+    updateTotal();
+  } else {
+    selectedStocks = v;
+    updateTotal();
+  }
+});
+
+stocksInput.value = 1;
+selectedStocks = 1;
 updateTotal();
 
-/* خريطة المناطق */
 const regionDetail = document.getElementById('regionDetail');
 document.getElementById('regionChips').addEventListener('click', (e) => {
   const chip = e.target.closest('.chip');
@@ -1527,7 +1475,6 @@ document.getElementById('regionChips').addEventListener('click', (e) => {
   }
 });
 
-/* الأسئلة الشائعة */
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -1537,7 +1484,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-/* المعرض + Lightbox */
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 document.getElementById('gallery').addEventListener('click', (e) => {
@@ -1559,7 +1505,6 @@ document.getElementById('lbClose').addEventListener('click', closeLb);
 lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLb(); });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLb(); });
 
-/* النموذج */
 const form = document.getElementById('regForm');
 const fullName = document.getElementById('fullName');
 const phone1 = document.getElementById('phone1');
@@ -1610,9 +1555,16 @@ form.addEventListener('submit', (e) => {
     markErr(phone2,true); showErr(document.getElementById('errPhone2'),true); valid = false;
   } else { markErr(phone2,false); showErr(document.getElementById('errPhone2'),false); }
 
-  if(!selectedStocks || selectedStocks < 1){
-    showErr(errStocks,true); valid = false;
-  } else { showErr(errStocks,false); }
+  const vStocks = parseInt(stocksInput.value, 10);
+  if(isNaN(vStocks) || vStocks < 1 || vStocks > CONFIG.maxStocks){
+    stocksInput.classList.add('error');
+    showErr(errStocks,true);
+    valid = false;
+  } else {
+    selectedStocks = vStocks;
+    stocksInput.classList.remove('error');
+    showErr(errStocks,false);
+  }
 
   if(!consent.checked){
     consentLabel.classList.add('error'); showErr(document.getElementById('errConsent'),true); valid = false;
@@ -1670,7 +1622,6 @@ copyBtn.addEventListener('click', async () => {
 
 reopenWa.addEventListener('click', () => { if(lastWaUrl) window.open(lastWaUrl, '_blank', 'noopener'); });
 
-/* الأذكار */
 const adhkar = [
   'سبحان الله وبحمده',
   'سبحان الله العظيم',
@@ -1698,10 +1649,8 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   setInterval(rotateDhikr, 5500);
 }
 
-/* السنة */
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* بديل الصور المكسورة */
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('error', function(){
     if(this.dataset.fallbackApplied) return;
